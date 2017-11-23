@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf75d4dd-b92e-44fb-9024-a0a750062621" name="Default" comment="added functions to detect packets, display src mac, dest mac and format them. Still errors persist.">
+    <list default="true" id="cf75d4dd-b92e-44fb-9024-a0a750062621" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packet-parser.py" afterPath="$PROJECT_DIR$/packet-parser.py" />
     </list>
@@ -20,8 +20,8 @@
       <file leaf-file-name="packet-parser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/packet-parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="576">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -187,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511391999743</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed the errors and extracting Source, Dest MAC and type of Protocol using numbers. Next Development: Name of Protocol">
+      <created>1511429531115</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1511429531115</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -223,7 +230,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added functions to detect packets, display src mac, dest mac and format them. Still errors persist." />
-    <option name="LAST_COMMIT_MESSAGE" value="added functions to detect packets, display src mac, dest mac and format them. Still errors persist." />
+    <MESSAGE value="Fixed the errors and extracting Source, Dest MAC and type of Protocol using numbers. Next Development: Name of Protocol" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the errors and extracting Source, Dest MAC and type of Protocol using numbers. Next Development: Name of Protocol" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -310,8 +318,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/packet-parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="576">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
