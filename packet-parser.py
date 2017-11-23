@@ -18,8 +18,8 @@ def protocol_identifier(type):
 
 def ip_parser(pckt):
     version_header_info = pckt[0]
-    version = version_header_info >> 4
-    header_length = (version_header_info & 15) * 4
+    version = version_header_info >> 4 # not working, some string int error
+    header_length = (version_header_info & 15) * 4 # not working yet
     print version, header_length
 
 def main():
