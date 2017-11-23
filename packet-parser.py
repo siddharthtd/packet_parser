@@ -1,7 +1,6 @@
 import socket
 import struct
 import textwrap
-from itertools import chain
 
 def mac_extracter(data):
     raw_dest_mac, raw_src_mac, mac_type = struct.unpack('! 6s 6s H', data[:14])
@@ -14,7 +13,7 @@ def actual_mac(raw_generic_mac):
     return mac_addr
 
 def protocol_identifier(type):
-    dict = {8:'IPv4'}
+    dict = {8:'IPv4', 56710:'IPv6', 1544:'ARP', 13696:'Reverse ARP', 2184:'Ethernet Flow Control', 18568:'MPLS Multicast', 18312:'MPLS Unicast' }
     return dict[type]
 
 def main():

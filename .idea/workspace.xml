@@ -20,8 +20,8 @@
       <file leaf-file-name="packet-parser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/packet-parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="960">
+              <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -194,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511429531115</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Protocol Type converted to text using dictionary (experimental)">
+      <created>1511431562651</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1511431562651</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -231,7 +238,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added functions to detect packets, display src mac, dest mac and format them. Still errors persist." />
     <MESSAGE value="Fixed the errors and extracting Source, Dest MAC and type of Protocol using numbers. Next Development: Name of Protocol" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the errors and extracting Source, Dest MAC and type of Protocol using numbers. Next Development: Name of Protocol" />
+    <MESSAGE value="Protocol Type converted to text using dictionary (experimental)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Protocol Type converted to text using dictionary (experimental)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -318,8 +326,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/packet-parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="960">
+          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
