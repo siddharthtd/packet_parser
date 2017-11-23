@@ -18,10 +18,9 @@ def protocol_identifier(type):
 
 def ip_parser(pckt):
     version_header_info = pckt[0]
-    
-    #version = (string_mode[0:4]
-    #header_length = string_mode[4:8]
-    #print version, header_length
+    version = version_header_info >> 4
+    header_length = (version_header_info & 15) * 4
+    print version, header_length
 
 def main():
     connect = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
