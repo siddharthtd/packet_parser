@@ -23,8 +23,8 @@
       <file leaf-file-name="packet-parser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/packet-parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="22" column="98" lean-forward="false" selection-start-line="22" selection-start-column="98" selection-end-line="22" selection-end-column="98" />
+            <state relative-caret-position="1024">
+              <caret line="32" column="77" lean-forward="true" selection-start-line="32" selection-start-column="77" selection-end-line="32" selection-end-column="77" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -78,7 +78,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -91,6 +90,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511437851013</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="IP version, header length and other header components extracted. Troubleshooting struct.unpack('! format', pckt[:20])&#10;&#10;src IP and Dest IP still not working">
+      <created>1511493478611</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1511493478611</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -265,13 +272,34 @@
     <MESSAGE value="Protocol Type converted to text using dictionary (experimental)" />
     <MESSAGE value="Several Protocols added for verification of the correct protocol (Tested and working)" />
     <MESSAGE value="Network layer parsing started, Troubleshooting IP version extraction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Network layer parsing started, Troubleshooting IP version extraction" />
+    <MESSAGE value="IP version, header length and other header components extracted. Troubleshooting struct.unpack('! format', pckt[:20])&#10;&#10;src IP and Dest IP still not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="IP version, header length and other header components extracted. Troubleshooting struct.unpack('! format', pckt[:20])&#10;&#10;src IP and Dest IP still not working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/packet-parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packet-parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/packet-parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -411,8 +439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/packet-parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="98" lean-forward="false" selection-start-line="22" selection-start-column="98" selection-end-line="22" selection-end-column="98" />
+        <state relative-caret-position="1024">
+          <caret line="32" column="77" lean-forward="true" selection-start-line="32" selection-start-column="77" selection-end-line="32" selection-end-column="77" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

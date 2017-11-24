@@ -20,8 +20,19 @@ def ip_header_parser(network_pckt):
     version_header_info = network_pckt[0]
     version = ord(version_header_info) >> 4
     header_length = (ord(version_header_info) & 15) * 4
-    ttl, ip_proto, raw_src_ip, raw_dest_ip = struct.unpack('! 8x b b 2x 4s 4s', network_pckt[:20])
-    return version, header_length, ttl, ip_proto, raw_dest_ip, raw_src_ip
+    total_len = struct.unpack('!2s', network_pckt[1:3])
+    #frag_val = struct.unpack('!b', network_pckt[6:7])
+    #frag_temp = (ord(x) for x in frag_val)
+    #frag_flag = frag_temp >> 3
+    #frag_offset = (ord(frag_val) & #some_integer) * #some_multiple
+    ttl = struct.unpack('!B', network_pckt[8])
+    #ip_proto = struct.unpack('!b', network_pckt[9])
+    #checksum = struct.unpack('! 2s', network_pckt[10:12])
+    #raw_src_ip = struct.unpack('! 4s', network_pckt[13:17])
+    #raw_dest_ip = struct.unpack('! 4s', network_pckt[18:20])
+    #ttl, ip_proto, raw_src_ip, raw_dest_ip = struct.unpack('! 8x b b 2x 4s 4s', network_pckt[:20])
+    #return version, header_length, ttl, ip_proto, raw_dest_ip, raw_src_ip
+    print ttl#, total_len, frag_flag, ip_proto, checksum, raw_src_ip, raw_dest_ip
 
 def ip_formatter(raw_generic_ip):
     container = map(str, raw_generic_ip)
@@ -38,9 +49,9 @@ def main():
         src_mac = actual_mac(raw_src_mac)
         protocol = protocol_identifier(mac_type)
         #print ('\nDestination MAC:{}\nSource MAC:{}\nProtocol:{}\n'.format(dest_mac, src_mac, protocol))
-        ip_ver, ip_head_len, ttl, ip_proto, raw_dest_ip, raw_src_ip = ip_header_parser(pckt)
-        dest_ip = ip_formatter(raw_dest_ip)
-        src_ip = ip_formatter(raw_src_ip)
-        print ('\nVersion:{}\nHeader Length:{}\nProtocol:{}\nTTL:{}\nDestination IP:{}\nSource IP:{}\n'.format(ip_ver, ip_head_len, ip_proto, ttl, dest_ip, src_ip))
-
+        #ip_ver, ip_head_len, ttl, ip_proto, raw_dest_ip, raw_src_ip = ip_header_parser(pckt)
+        #dest_ip = ip_formatter(raw_dest_ip)
+        #src_ip = ip_formatter(raw_src_ip)
+        #print ('\nVersion:{}\nHeader Length:{}\nProtocol:{}\nTTL:{}\nDestination IP:{}\nSource IP:{}\n'.format(ip_ver, ip_head_len, ip_proto, ttl, dest_ip, src_ip))
+        ip_header_parser(pckt)
 main()
