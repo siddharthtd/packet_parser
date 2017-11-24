@@ -16,11 +16,17 @@ def protocol_identifier(type):
     proto_data = {8:'IPv4', 56710:'IPv6', 1544:'ARP', 13696:'Reverse ARP', 2184:'Ethernet Flow Control', 18568:'MPLS Multicast', 18312:'MPLS Unicast' }
     return proto_data[type]
 
-def ip_parser(pckt):
-    version_header_info = pckt[0]
-    version = version_header_info >> 4 # not working, some string int error
-    header_length = (version_header_info & 15) * 4 # not working yet
-    print version, header_length
+def ip_header_parser(network_pckt):
+    version_header_info = network_pckt[0]
+    version = ord(version_header_info) >> 4
+    header_length = (ord(version_header_info) & 15) * 4
+    ttl, ip_proto, raw_src_ip, raw_dest_ip = struct.unpack('! 8x b b 2x 4s 4s', network_pckt[:20])
+    return version, header_length, ttl, ip_proto, raw_dest_ip, raw_src_ip
+
+def ip_formatter(raw_generic_ip):
+    container = map(str, raw_generic_ip)
+    actual_ip = '.'.join(container)
+    return actual_ip
 
 def main():
     connect = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
@@ -32,6 +38,9 @@ def main():
         src_mac = actual_mac(raw_src_mac)
         protocol = protocol_identifier(mac_type)
         #print ('\nDestination MAC:{}\nSource MAC:{}\nProtocol:{}\n'.format(dest_mac, src_mac, protocol))
-        ip_parser(pckt)
+        ip_ver, ip_head_len, ttl, ip_proto, raw_dest_ip, raw_src_ip = ip_header_parser(pckt)
+        dest_ip = ip_formatter(raw_dest_ip)
+        src_ip = ip_formatter(raw_src_ip)
+        print ('\nVersion:{}\nHeader Length:{}\nProtocol:{}\nTTL:{}\nDestination IP:{}\nSource IP:{}\n'.format(ip_ver, ip_head_len, ip_proto, ttl, dest_ip, src_ip))
 
 main()
