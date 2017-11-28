@@ -23,6 +23,11 @@ def ip_pckt(pckt):
     ttl, ip_proto, raw_src_ip, raw_dest_ip = struct.unpack('! 8x B B 2x 4s 4s', pckt[:20])
     return version, head_len, ttl. ip_proto, raw_dest_ip, raw_src_ip, data[head_len:]
 
+def actual_ip(generic__raw_ip):
+    container = map(str, generic__raw_ip)
+    ip = '.'.join(container)
+    return ip
+
 def main():
     connect = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
 
