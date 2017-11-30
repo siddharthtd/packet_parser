@@ -32,6 +32,10 @@ def ip_protocol_identifier(type):
     proto_data = {1:'ICMP', 2:'IGMP', 6:'TCP', 17:'UDP', 9:'IGRP', 89:'OSPF', 47:'GRE', 50:'ESP', 51:'AH', 57:'SKIP', 88:'EIGRP', 115:'L2TP'}
     return proto_data[type]
 
+def icmp_unpack(data):
+    type, code, checksum = struct.unpack('! B B H', data[:4])
+    return type, code, checksum, data[4:]
+
 def main():
     connect = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
 

@@ -23,8 +23,8 @@
       <file leaf-file-name="packet-parser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/packet-parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="912">
-              <caret line="38" column="48" lean-forward="true" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+            <state relative-caret-position="864">
+              <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -285,7 +285,21 @@
       <option name="project" value="LOCAL" />
       <updated>1514587193987</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="IP properly formatting function added.">
+      <created>1511909325119</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1511909325119</updated>
+    </task>
+    <task id="LOCAL-00019" summary="IP Protocol indentifier function added, also, data caught in the main function from the ip_pckt function">
+      <created>1511996709417</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1511996709417</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -331,7 +345,9 @@
     <MESSAGE value="restructuring entire code" />
     <MESSAGE value="more components of the IP packet are set for extraction. Not working yet. commented." />
     <MESSAGE value="IP header information parsing added." />
-    <option name="LAST_COMMIT_MESSAGE" value="IP header information parsing added." />
+    <MESSAGE value="IP properly formatting function added." />
+    <MESSAGE value="IP Protocol indentifier function added, also, data caught in the main function from the ip_pckt function" />
+    <option name="LAST_COMMIT_MESSAGE" value="IP Protocol indentifier function added, also, data caught in the main function from the ip_pckt function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -517,8 +533,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/packet-parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="38" column="48" lean-forward="true" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+        <state relative-caret-position="864">
+          <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
