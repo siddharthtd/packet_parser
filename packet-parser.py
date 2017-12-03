@@ -47,6 +47,10 @@ def tcp_unpack(data):
     fin = off_reserve_flag & 1
     return src_port, dest_port, seq_no, acknowledgement, urg, ack, psh, rst, syn, fin, data[offset:]
 
+def udp_unpack(data):
+    src_port, dest_port, size = struct.unpack('! H H 2x H', data[:8])
+    return src_port, dest_port, size, data[8:]
+
 def main():
     connect = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
 
@@ -61,6 +65,14 @@ def main():
         dest_ip = actual_ip(raw_dest_ip)
         ip_proto_name = ip_protocol_identifier(ip_protocol)
         print ('\nDestination MAC:{}\nSource MAC:{}\nProtocol:{}\n'.format(dest_mac, src_mac, protocol))
-        print ('\nDestination IP:{}\nSource IP:{}\nIP Protocol:{}\n'.format(dest_ip, src_ip, ip_proto_name))
+
+        if mac_type == 8:
+            print('\nIPv4 Packet\n')
+            print('\nVersion:{}\nTTl:{}\nSource IP Address:{}\nDestination IP Address:{}\nProtocol Name:{}'.format(version, ttl, src_ip, dest_ip, ip_proto_name))
+
+            if ip_protocol == 1:
+                type_icmp, code, checksum, payload = icmp_unpack(ip_pkt)
+                print ('\nICMP Protocol Packet\n')
+                print('\nType:{}\nCode:{}\nChecksum:{}\n'.format(type_icmp, code, checksum))
 
 main()
