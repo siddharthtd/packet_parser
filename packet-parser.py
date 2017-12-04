@@ -71,8 +71,20 @@ def main():
             print('\nVersion:{}\nTTl:{}\nSource IP Address:{}\nDestination IP Address:{}\nProtocol Name:{}'.format(version, ttl, src_ip, dest_ip, ip_proto_name))
 
             if ip_protocol == 1:
-                type_icmp, code, checksum, payload = icmp_unpack(ip_pkt)
+                type_icmp, code, checksum, payload_icmp = icmp_unpack(ip_pkt)
                 print ('\nICMP Protocol Packet\n')
                 print('\nType:{}\nCode:{}\nChecksum:{}\n'.format(type_icmp, code, checksum))
+                print (payload_icmp)
+
+            elif ip_protocol == 6:
+                src_port, dest_port, seq, ack, flg_urg, flg_ack, flg_psh, flg_rst, flg_syn, flg_fin, payload_tcp = tcp_unpack(ip_pkt)
+                print('\nTCP Protocol Packet\n')
+                print('\nSource Port:{}\nDestination Port:{}\nSequence No.:{}\nAcknowledgement:{}\n'.format(src_port, dest_port, seq, ack))
+                print('\nFlag Information\n')
+                print('\nUrgent:[{}]\nAcknowledgement:[{}]\nPush:[{}]\nReset:[{}]\nSyn:[{}]\nFinish:[{}]\n'.format(flg_urg, flg_ack, flg_psh, flg_rst, flg_syn, flg_fin))
+                print(payload_tcp)
+
+
+
 
 main()
