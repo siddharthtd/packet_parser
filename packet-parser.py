@@ -84,7 +84,9 @@ def main():
                 print('\nUrgent:[{}]\nAcknowledgement:[{}]\nPush:[{}]\nReset:[{}]\nSyn:[{}]\nFinish:[{}]\n'.format(flg_urg, flg_ack, flg_psh, flg_rst, flg_syn, flg_fin))
                 print(payload_tcp)
 
-
-
-
+            elif ip_protocol == 17:
+                src_port, dest_port, size, payload_udp = udp_unpack(ip_pkt)
+                print('\nUDP Protocol Packet\n')
+                print('\nSource Port:{}\nDestination Port:{}\nSize:{}\n'.format(src_port,dest_port, size)
+                print(payload_udp)
 main()
