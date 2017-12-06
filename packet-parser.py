@@ -21,7 +21,7 @@ def ip_pckt(pckt):
     version = ver_head_len >> 4
     head_len = (ver_head_len & 15) * 4
     ttl, ip_proto, raw_src_ip, raw_dest_ip = struct.unpack('! 8x B B 2x 4s 4s', pckt[:20])
-    return version, head_len, ttl, ip_proto, raw_dest_ip, raw_src_ip, data[head_len:]
+    return version, head_len, ttl, ip_proto, raw_dest_ip, raw_src_ip, pckt[head_len:]
 
 def actual_ip(generic__raw_ip):
     container = map(str, generic__raw_ip)
@@ -29,7 +29,7 @@ def actual_ip(generic__raw_ip):
     return ip
 
 def ip_protocol_identifier(type):
-    proto_data = {1:'ICMP', 2:'IGMP', 6:'TCP', 17:'UDP', 9:'IGRP', 89:'OSPF', 47:'GRE', 50:'ESP', 51:'AH', 57:'SKIP', 88:'EIGRP', 115:'L2TP'}
+    proto_data = {1:'ICMP', 2:'IGMP', 6:'TCP', 17:'UDP', 9:'IGRP', 89:'OSPF', 47:'GRE', 50:'ESP', 51:'AH', 57:'SKIP', 88:'EIGRP', 115:'L2TP', 128:'SSCOPMCE', 28:'IRTP'}
     return proto_data[type]
 
 def icmp_unpack(data):
@@ -87,6 +87,9 @@ def main():
             elif ip_protocol == 17:
                 src_port, dest_port, size, payload_udp = udp_unpack(ip_pkt)
                 print('\nUDP Protocol Packet\n')
-                print('\nSource Port:{}\nDestination Port:{}\nSize:{}\n'.format(src_port,dest_port, size)
+                print('\nSource Port:{}\nDestination Port:{}\nSize:{}\n'.format(src_port,dest_port, size))
                 print(payload_udp)
+
+            else:
+                print(ip_pkt)
 main()
