@@ -1,6 +1,5 @@
 import socket
 import struct
-import textwrap
 
 def mac_extracter(data):
     raw_dest_mac, raw_src_mac, mac_type = struct.unpack('! 6s 6s H', data[:14])
