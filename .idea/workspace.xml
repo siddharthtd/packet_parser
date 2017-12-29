@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf75d4dd-b92e-44fb-9024-a0a750062621" name="Default" comment="more components of the IP packet are set for extraction. Not working yet. commented.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="cf75d4dd-b92e-44fb-9024-a0a750062621" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -250,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511729810835</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="more components of the IP packet are set for extraction. Not working yet. commented.">
+      <created>1511729824337</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1511729824337</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -293,9 +299,9 @@
     <MESSAGE value="Several Protocols added for verification of the correct protocol (Tested and working)" />
     <MESSAGE value="Network layer parsing started, Troubleshooting IP version extraction" />
     <MESSAGE value="IP version, header length and other header components extracted. Troubleshooting struct.unpack('! format', pckt[:20])&#10;&#10;src IP and Dest IP still not working" />
-    <MESSAGE value="more components of the IP packet are set for extraction. Not working yet. commented." />
     <MESSAGE value="restructuring entire code" />
-    <option name="LAST_COMMIT_MESSAGE" value="restructuring entire code" />
+    <MESSAGE value="more components of the IP packet are set for extraction. Not working yet. commented." />
+    <option name="LAST_COMMIT_MESSAGE" value="more components of the IP packet are set for extraction. Not working yet. commented." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
