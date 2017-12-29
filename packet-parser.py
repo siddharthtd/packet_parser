@@ -21,7 +21,7 @@ def ip_pckt(pckt):
     version = ver_head_len >> 4
     head_len = (ver_head_len & 15) * 4
     ttl, ip_proto, raw_src_ip, raw_dest_ip = struct.unpack('! 8x B B 2x 4s 4s', pckt[:20])
-    return version, head_len, ttl. ip_proto, raw_dest_ip, raw_src_ip, data[head_len:]
+    return version, head_len, ttl, ip_proto, raw_dest_ip, raw_src_ip, data[head_len:]
 
 def actual_ip(generic__raw_ip):
     container = map(str, generic__raw_ip)
@@ -36,6 +36,17 @@ def icmp_unpack(data):
     type, code, checksum = struct.unpack('! B B H', data[:4])
     return type, code, checksum, data[4:]
 
+def tcp_unpack(data):
+    (src_port, dest_port, seq_no, acknowledgement, off_reserve_flag) = struct.unpack('! H H L L H', data[:14])
+    offset = (off_reserve_flag >> 12) * 4
+    urg = (off_reserve_flag & 32) >> 5
+    ack = (off_reserve_flag & 16) >> 4
+    psh = (off_reserve_flag & 8) >> 3
+    rst = (off_reserve_flag & 4) >> 2
+    syn = (off_reserve_flag & 2) >> 1
+    fin = off_reserve_flag & 1
+    return src_port, dest_port, seq_no, acknowledgement, urg, ack, psh, rst, syn, fin, data[offset:]
+
 def main():
     connect = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
 
@@ -45,7 +56,7 @@ def main():
         dest_mac = actual_mac(raw_dest_mac)
         src_mac = actual_mac(raw_src_mac)
         protocol = eth_protocol_identifier(mac_type)
-        version, header_length, ttl, ip_protocol, raw_dest_ip, raw_src_ip, pkt = ip_pckt(pckt)
+        version, header_length, ttl, ip_protocol, raw_dest_ip, raw_src_ip, ip_pkt = ip_pckt(pckt)
         src_ip = actual_ip(raw_src_ip)
         dest_ip = actual_ip(raw_dest_ip)
         ip_proto_name = ip_protocol_identifier(ip_protocol)
